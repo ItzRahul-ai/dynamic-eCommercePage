@@ -65,10 +65,11 @@ const secondChild = document.createElement("div");
 
 // sarch option
 secondChild.innerHTML = `
-<input placeholder="Sarch your product" type="text" style="width:90%; outline:none; border:1px solid white; border-radius:5px; height:40px; background-color:#fff9;" class="pl-4 pr-30">
-
-<button type="submit" style="background-color:black;" class="hover:opacity-70 transition-all duration-700 px-4 absolute py-2 rounded-lg font-bold text-xl lg:right-10 right-2 cursor-pointer">Sarch</button>
+<input id="sarch" placeholder="Sarch your product" type="text" style="width:90%; outline:none; border:1px solid white; border-radius:5px; height:40px; background-color:#fff9;" class="pl-4 pr-30">
 `;
+
+
+
 
 // nav2 third child
 const thirdChild = document.createElement("div");
@@ -230,59 +231,59 @@ const cardContainer = document.createElement("div");
 
 // declear a array
 const cardData = [
-{
-  image: "./asset/product1.jpeg",
-  name: "Headphone",
-  price: 1299
-},
-{
-  image: "./asset/product2.jpeg",
-  name: "Camera",
-  price: 5099
-},
-{
-  image: "./asset/product3.jpeg",
-  name: "Camera",
-  price: 2299
-},
-{
-  image: "./asset/product4.jpeg",
-  name: "Shoes",
-  price: 299
-},
-{
-  image: "./asset/product5.jpeg",
-  name: "Camera",
-  price: 11399
-}
+  {
+    image: "./asset/product1.jpeg",
+    name: "Headphone",
+    price: 1299
+  },
+  {
+    image: "./asset/product2.jpeg",
+    name: "Camera",
+    price: 5099
+  },
+  {
+    image: "./asset/product3.jpeg",
+    name: "Camera",
+    price: 2299
+  },
+  {
+    image: "./asset/product4.jpeg",
+    name: "Shoes",
+    price: 299
+  },
+  {
+    image: "./asset/product5.jpeg",
+    name: "Camera",
+    price: 11399
+  }
 ];
 
 // show cards in cards secton
 
 cardData.forEach(item => {
   // card
-const card = document.createElement("div");
+  const card = document.createElement("div");
 
-//card image section
-const cardImg = document.createElement("img");
-// get image in array
-cardImg.src = item.image;
-cardImg.alt = item.name;
+  //card image section
+  const cardImg = document.createElement("img");
+  // get image in array
+  cardImg.src = item.image;
+  cardImg.alt = item.name;
 
-// product name
-const productName = document.createElement("p");
-// get name in array
- productName.textContent = item.name;
+  // product name
+  const productName = document.createElement("p");
+  // get name in array
+  productName.textContent = item.name;
 
-// product price 
-const productPrice = document.createElement("p");
-// get price
-productPrice.innerHTML = `<span>₹</span> ${item.price}`;
+  // product price 
+  const productPrice = document.createElement("p");
+  // get price
+  productPrice.innerHTML = `<span>₹</span> ${item.price}`;
 
-// product purchse and save button 
-const produtBtn = document.createElement("div");
+  // product purchse and save button 
+  const produtBtn = document.createElement("div");
 
-produtBtn.innerHTML = `
+  produtBtn.innerHTML = `
 <div>
 <button type="submit" class="bg-blue-600 px-4 py-1 rounded-lg text-white cursor-pointer"><svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4"/>
@@ -295,24 +296,24 @@ produtBtn.innerHTML = `
 </div>
 `;
 
-// end card section
+  // end card section
 
-// design card
-card.classList = "bg-white rounded-xl px-2 py-1 w-full hover:scale-105 transition-all duration-700";
-cardImg.classList = "w-full h-[200px] rounded-xl mb-4";
-productName.classList = "w-full py-1 font-bold text-lg";
-productPrice.classList = "w-full py-1 font-bold text-lg";
-produtBtn.classList = "flex justify-between items-center w-full px-4 py-1";
+  // design card
+  card.classList = "bg-white rounded-xl px-2 py-1 w-full hover:scale-105 transition-all duration-700";
+  cardImg.classList = "w-full h-[200px] rounded-xl mb-4";
+  productName.classList = "w-full py-1 font-bold text-lg";
+  productPrice.classList = "w-full py-1 font-bold text-lg";
+  produtBtn.classList = "flex justify-between items-center w-full px-4 py-1";
 
 
-// card all items push in card
-card.appendChild(cardImg);
-card.appendChild(productName);
-card.appendChild(productPrice);
-card.appendChild(produtBtn);
+  // card all items push in card
+  card.appendChild(cardImg);
+  card.appendChild(productName);
+  card.appendChild(productPrice);
+  card.appendChild(produtBtn);
 
-// push card in card container
-cardContainer.appendChild(card);
+  // push card in card container
+  cardContainer.appendChild(card);
 });
 
 // style section {
@@ -339,7 +340,7 @@ nav2.classList = "bg-blue-600 w-full p-4 py-4 mt-2 shadow-xl text-white flex"; /
 
 firstChild.classList = "lg:w-1/5 w-1/2 lg:text-center text-left font-bold text-3xl"; // first child style
 
-secondChild.classList ="lg:w-3/5 w-1/2 flex justify-center items-center relative" // second child style
+secondChild.classList = "lg:w-3/5 w-1/2 flex justify-center items-center relative" // second child style
 
 thirdChild.classList = "w-1/5 hidden lg:flex justify-between items-center";
 
@@ -355,7 +356,7 @@ heroContent.classList = "w-full h-full bg-[rgb(0,0,0,0.7)] px-4 py-2 flex justif
 
 // product sction design
 
-product.classList ="border-t border-gray-300 mt-2 px-4 py-2 shadow-xl h-full";
+product.classList = "border-t border-gray-300 mt-2 px-4 py-2 shadow-xl h-full";
 
 addProduct.classList = "flex hidden justify-center items-center w-full h-full";
 
@@ -426,17 +427,16 @@ mainCardsSection.appendChild(cardContainer);
 document.body.appendChild(mainDiv);
 // }  end push section
 
+// Desktop button
+const desktopSellBtn = document.querySelector("#addProduct"); // desktop
+desktopSellBtn.addEventListener("click", () => {
+  addProduct.classList.toggle("hidden");
+  addProduct.classList.toggle("flex");
+});
 
-// addProduct button
-const sellBtn = document.getElementById("addProduct");
-
-// click event
-sellBtn.addEventListener("click", () => {
-  if (addProduct.classList.contains("hidden")) {
-    addProduct.classList.remove("hidden");
-    addProduct.classList.add("flex");
-  } else {
-    addProduct.classList.remove("flex");
-    addProduct.classList.add("hidden");
-  }
+// Mobile button
+const mobileSellBtn = document.querySelector("#mobile-menu #addProduct"); // mobile menu id
+mobileSellBtn.addEventListener("click", () => {
+  addProduct.classList.toggle("hidden");
+  addProduct.classList.toggle("flex");
 });
